@@ -52,12 +52,12 @@ def test_cookiecutter_all_options(
     if open_source_license == "None":
         if include_github_actions in ["ci", "ci+cd"]:
             assert num_items(path, [".github", "workflows"]) == 1
-            assert num_items(path) == 11
+            assert num_items(path) == 15
         else:
-            assert num_items(path) == 10
+            assert num_items(path) == 14
     else:
         if include_github_actions in ["ci", "ci+cd"]:
             assert num_items(path, [".github", "workflows"]) == 1
-            assert num_items(path) == 12
+            assert num_items(path) == 16
         else:
-            assert num_items(path) == 11
+            assert num_items(path) == 15
