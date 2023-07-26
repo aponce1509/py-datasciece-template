@@ -80,3 +80,19 @@ help:
 		'^.PHONY: .*?## .*$$' $(MAKEFILE_LIST) | \
 		sort | \
 		awk 'BEGIN {FS = ".PHONY: |## "}; {printf "\033[36m%-19s\033[0m %s\n", $$2, $$3}'
+
+PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+BUCKET = {{ cookiecutter.s3_bucket }}
+PROFILE = {{ cookiecutter.aws_profile }}
+PROJECT_NAME = {{ cookiecutter.__package_slug }}
+
+
+data: activate  ## Make Dataset, it also need the package to be installed: make install
+	{{ cookiecutter.__package_slug }} create-dataset
+
+
+# TODO: acabar makefile
+# TODO: fichero de configuracion
+# TODO: fichero de configuracion para los logs
+# TODO: pytest arguments on pyproject
+# TODO: docu,emtation

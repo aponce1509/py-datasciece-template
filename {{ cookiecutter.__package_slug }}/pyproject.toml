@@ -22,7 +22,7 @@ dependencies = [
 dynamic = ["version"]
 
 [tool.hatch.version]
-path = "src/{{ cookiecutter.__package_slug }}/__init__.py"
+path = "{{ cookiecutter.__package_slug }}/__init__.py"
 
 # [project.urls]
 # Homepage = ""
@@ -46,7 +46,7 @@ jupyter = [
 ]
 
 [project.scripts]
-pkg-test = '{{ cookiecutter.__package_slug }}.cli:cli'
+{{ cookiecutter.__package_slug }} = '{{ cookiecutter.__package_slug }}.cli:cli'
 
 # TODO: PYTEST CONFIG
 
@@ -75,7 +75,7 @@ parallel = true
 source = [
     "docs/examples",
     "tests",
-    "pkgtest"
+    "{{ cookiecutter.__package_slug }}"
 ]
 context = '${CONTEXT}'
 omit = [
