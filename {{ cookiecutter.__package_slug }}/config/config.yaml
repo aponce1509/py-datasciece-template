@@ -1,0 +1,3 @@
+aws:
+    profile: {{ cookiecutter.aws_profile }}
+    bucket: {{ cookiecutter.s3_bucket }}

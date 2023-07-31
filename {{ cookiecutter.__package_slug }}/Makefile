@@ -90,9 +90,23 @@ PROJECT_NAME = {{ cookiecutter.__package_slug }}
 data: activate  ## Make Dataset, it also need the package to be installed: make install
 	{{ cookiecutter.__package_slug }} create-dataset
 
+train: activate  ## Train model using the hyperparameters fixed in the config file
+	echo "WIP: Not implemented"
+	# {{ cookiecutter.__package_slug }} train-model
 
-# TODO: acabar makefile
-# TODO: fichero de configuracion
-# TODO: fichero de configuracion para los logs
+train-hyperparameters:
+	echo "WIP: Not implemented"
+
+predict: activate  ## Predict using the best model on MLFlow
+	echo "WIP: Not implemented"
+
+deply: activate
+	echo "WIP: Not implemented"
+
+# TODO: fichero de configuracion: 
+# tengo que tomar una decision: hydra, pydantic, dotenv, basic:
+#  creo que la que mas me gusta es la de pydantuc + dotevn + yaml
 # TODO: pytest arguments on pyproject
-# TODO: docu,emtation
+# TODO: los procesos de train predict deploy hyperparameters
+# TODO: Tambien es interesante definir un sitio para nuevas metricas.
+# TODO: documentation
