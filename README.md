@@ -27,7 +27,7 @@ Please see the [documentation](https://py-pkgs-cookiecutter.readthedocs.io/en/la
 2. Generate a Python package structure using [`py-pkgs-cookiecutter`](https://github.com/py-pkgs/py-pkgs-cookiecutter):
 
     ```bash
-    cookiecutter https://github.com/py-pkgs/py-pkgs-cookiecutter.git
+    cookiecutter https://github.com/aponce1509/python-template.git
     ```
 
 3. After responding to the prompts you should have a directory structure similar to that shown below. To learn more about the contents of this directory structure, please see the `py-pkgs-cookiecutter` [documentation](https://py-pkgs-cookiecutter.readthedocs.io/en/latest/).
