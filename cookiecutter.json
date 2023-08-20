@@ -1,24 +1,21 @@
 {
-  "author_name": "Monty Python",
-  "package_name": "mypkg",
-  "__package_slug": "{{ cookiecutter.package_name|lower|replace(' ', '_')|replace('-', '_') }}",
-  "package_short_description": "A package for doing great things!",
-  "package_version": "0.1.0",
-  "python_version": "3.9",
-  "open_source_license": [
-    "MIT",
-    "Apache License 2.0",
-    "GNU General Public License v3.0",
-    "CC0 v1.0 Universal",
-    "BSD 3-Clause",
-    "Proprietary",
-    "None"
-  ],
-  "include_github_actions": [
-    "no",
-    "ci",
-    "ci+cd"
-  ],
-  "s3_bucket": "[OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')",
-  "aws_profile": "default"
+    "author_name": "Monty Python",
+    "author_email": "monty_python@python.com",
+    "package_name": "mypkg",
+    "__package_slug": "{{ cookiecutter.package_name|lower|replace(' ', '_')|replace('-', '_') }}",
+    "package_short_description": "A package for doing great things!",
+    "package_version": "0.1.0",
+    "python_version": "3.9",
+    "open_source_license": [
+        "MIT",
+        "Apache License 2.0",
+        "GNU General Public License v3.0",
+        "CC0 v1.0 Universal",
+        "BSD 3-Clause",
+        "Proprietary",
+        "None"
+    ],
+    "include_github_actions": ["no", "ci", "ci+cd"],
+    "s3_bucket": "[OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')",
+    "aws_profile": "default"
 }
