@@ -1,0 +1,105 @@
+[build-system]
+requires = ["hatchling >= 1.17.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ cookiecutter.__package_slug }}"
+description = "{{ cookiecutter.package_short_description }}"
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+license = "{{ cookiecutter.open_source_license }}"
+authors = [{name="{{ cookiecutter.author_name }}", email="{{ cookiecutter.author_email }}"}]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Typing :: Typed",
+]
+dependencies = [
+    "awscli",
+    "python-dotenv",
+    "click>=8.1.6",
+]
+dynamic = ["version"]
+
+[tool.hatch.version]
+path = "{{ cookiecutter.__package_slug }}/__init__.py"
+
+# [project.urls]
+# Homepage = ""
+# Documentation = ""
+# Repository = ""
+
+[project.optional-dependencies]
+dev = [
+  "ruff",
+  "black",
+  "pytest",
+  "pre_commit",
+  "mypy",
+  "coverage",
+  "sphinx",
+  "pytest-benchmark>=4.0.0"
+]
+jupyter = [
+  "ipykernel",
+  "plotly"
+]
+
+[project.scripts]
+{{ cookiecutter.__package_slug }} = '{{ cookiecutter.__package_slug }}.cli:cli'
+
+# TODO: PYTEST CONFIG
+
+[tool.black]
+line-length = 80
+target-version = ['py310', 'py311']
+# this is an example
+# force-exclude = '''
+# /(
+#     mlflow/protos/
+#   | mlflow/ml_package_versions\.py$
+#   | tests/protos/
+# )
+# '''
+
+[tool.mypy]
+strict = false
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_missing_imports = true
+check_untyped_defs = true
+
+[tool.coverage.run]
+parallel = true
+source = [
+    "docs/examples",
+    "tests",
+    "{{ cookiecutter.__package_slug }}"
+]
+context = '${CONTEXT}'
+omit = [
+]
+
+[tool.ruff]
+line-length = 80
+target-version = "py310"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP",  # pyupgrade
+    "T20",  # flake8-print
+]
+force-exclude = true
+ignore = [
+]
+extend-exclude = [
+]
+
+[tool.ruff.per-file-ignores]
+# "dev/*" = ["T201"]
